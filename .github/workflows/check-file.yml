@@ -1,0 +1,19 @@
+name: Check Important File
+
+on: push
+
+jobs:
+  check-file:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get the code
+        uses: actions/checkout@v4
+
+      - name: Check if config.txt exists
+        run: |
+          if [ -f "config.txt" ]; then
+            echo "✅ config.txt found! All good."
+          else
+            echo "❌ config.txt is MISSING!"
+            exit 1
+          fi
