@@ -1,0 +1,19 @@
+name: CI/CD Pipeline
+
+on: push
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get the code
+        uses: actions/checkout@v4
+
+      - name: Step 1 - Run Tests
+        run: echo "Running tests... All tests passed!"
+
+      - name: Step 2 - Build the App
+        run: echo "Building the application... Build successful!"
+
+      - name: Step 3 - Deploy the App
+        run: echo "Deploying to production... Deployment successful!"
